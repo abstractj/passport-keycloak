@@ -8,10 +8,10 @@ passport.use(new KeycloakStrategy({
        host:       '<insert your host here>',
        clientID:     'goose-passport-js',
        clientSecret: 'secret',
-       callbackURL:  'http://www.google.com'
+       callbackURL:  '/hello'
        },
       function(accessToken, idToken, profile, done) {
-        console.log("ahoy");
+        console.log("Keycloak strategy");
       })
 )
 
@@ -28,13 +28,21 @@ app.set(function() {
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/hello', function (req, res) {
+  res.send('Ahoy!')
+})
+
+app.get('/error', function (req, res) {
+  res.send('Error!')
+})
+
 app.get('/callback',
-  passport.authenticate('Keycloak', { failureRedirect: '/url-if-something-fails' }),
+  passport.authenticate('Keycloak', { failureRedirect: '/error' }),
   function(req, res) {
     if (!req.user) {
       throw new Error('user null');
     }
-    res.redirect("/user");
+    res.redirect("/hello");
   });
 
 app.listen(3000);

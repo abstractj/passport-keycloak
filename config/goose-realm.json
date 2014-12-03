@@ -65,7 +65,7 @@
             "name": "goose-passport-js",
             "enabled": true,
             "redirectUris": [
-                "/callback/*"
+                "/hello/*"
             ],
             "secret": "secret"
         }
