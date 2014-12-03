@@ -5,9 +5,9 @@ var express = require('express')
 
 passport.use(new KeycloakStrategy({
        realm: 'goose-realm',
-       host:       '10.0.1.9:8080',
+       host:       '<insert your host here>',
        clientID:     'goose-passport-js',
-       clientSecret: '09a0d375-5930-4b9c-bd55-e5c02c6e9609',
+       clientSecret: 'secret',
        callbackURL:  '/callback'
        },
       function(accessToken, idToken, profile, done) {
