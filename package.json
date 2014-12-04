@@ -4,14 +4,15 @@
   "description": "Keycloak authentication strategy for Passport.js",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/jshint/bin/jshint ./lib/*.js && ./node_modules/mocha/bin/mocha"
   },
   "repository": "https://github.com/abstractj/passport-keycloak.git",
   "author": "Bruno Oliveira<bruno@abstractj.org>",
   "license": "ASL2",
   "devDependencies": {
     "mocha": "~1.7.0",
-    "should": "~1.2.1"
+    "should": "~1.2.1",
+    "jshint": "^2.5.10"
   },
   "dependencies": {
     "passport-oauth": "~0.1.12",
