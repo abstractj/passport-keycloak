@@ -8,7 +8,7 @@ passport.use(new KeycloakStrategy({
        host:       '<insert your host here>',
        clientID:     'goose-passport-js',
        clientSecret: 'secret',
-       callbackURL:  '/hello'
+       callbackURL:  'http://localhost:3000/hello/'
        },
       function(accessToken, idToken, profile, done) {
         console.log("Keycloak strategy");

@@ -65,7 +65,7 @@
             "name": "goose-passport-js",
             "enabled": true,
             "redirectUris": [
-                "/hello/*"
+                "http://localhost:3000/hello/*"
             ],
             "secret": "secret"
         }
