@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha"
   },
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/abstractj/passport-keycloak.git",
+  "author": "Bruno Oliveira<bruno@abstractj.org>",
   "license": "ASL2",
   "devDependencies": {
     "mocha": "~1.7.0",

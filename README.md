@@ -1,6 +1,6 @@
 # Passport Keycloak adapter
 
-Note: Most of the work done here was inspired/adapted based on [passport-auth0](https://github.com/auth0/passport-auth0.git).
+Note: Most of the work done here was forked/adapted from [passport-auth0](https://github.com/auth0/passport-auth0.git).
 
 ## Instructions
 
