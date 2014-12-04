@@ -16,24 +16,23 @@ describe('Keycloak strategy', function () {
 
   it('authorizationURL should have the host', function () {
     this.strategy.options
-      .authorizationURL.should.eql('https://keycloak.org/realms/goose-realm/tokens/login');
+      .authorizationURL.should.eql('http://keycloak.org/auth/realms/goose-realm/tokens/login');
   });
 
   it('tokenURL should have the host', function () {
     this.strategy.options
-      .tokenURL.should.eql('https://keycloak.org/realms/goose-realm/tokens/access/codes');
+      .tokenURL.should.eql('http://keycloak.org/auth/realms/goose-realm/tokens/access/codes');
   });
 
   it('userInfoURL should have the host', function () {
     this.strategy.options
-      .userInfoURL.should.eql('https://keycloak.org/userinfo');
+      .userInfoURL.should.eql('http://keycloak.org/auth/userinfo');
   });
 
   describe('authorizationParams', function () {
 
-    it('should map the connection field', function () {
-      var extraParams = this.strategy.authorizationParams({connection: 'foo'});
-      extraParams.connection.should.eql('foo');
+    it('should map the state field', function () {
+      this.strategy.authorizationParams().state.should.exist;
     });
 
   });

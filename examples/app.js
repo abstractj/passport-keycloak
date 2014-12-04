@@ -1,19 +1,19 @@
-var express = require('express')
-  , passport = require('passport')
-  , util = require('util')
-  , KeycloakStrategy = require('../lib');
+var express = require('express'),
+  passport = require('passport'),
+  util = require('util'),
+  KeycloakStrategy = require('../lib');
 
 passport.use(new KeycloakStrategy({
-       realm: 'goose-realm',
-       host:       '10.0.1.9:8080',
-       clientID:     'goose-passport-js',
-       clientSecret: '09a0d375-5930-4b9c-bd55-e5c02c6e9609',
-       callbackURL:  '/callback'
-       },
-      function(accessToken, idToken, profile, done) {
-        console.log("ahoy");
-      })
-)
+    realm: 'goose-realm',
+    host:       '<insert your host here>',
+    clientID:     'goose-passport-js',
+    clientSecret: 'secret',
+    callbackURL:  'http://localhost:3000/hello/'
+  },
+  function(accessToken, idToken, profile, done) {
+    console.log('Keycloak strategy');
+  })
+);
 
 var app = express();
 
@@ -28,14 +28,22 @@ app.set(function() {
   app.use(express.static(__dirname + '/public'));
 });
 
+app.get('/hello', function (req, res) {
+  res.send('Ahoy!');
+});
+
+app.get('/error', function (req, res) {
+  res.send('Error!');
+});
+
 app.get('/callback',
-  passport.authenticate('Keycloak', { failureRedirect: '/url-if-something-fails' }),
+  passport.authenticate('Keycloak', { failureRedirect: '/error' }),
   function(req, res) {
     if (!req.user) {
       throw new Error('user null');
     }
-    res.redirect("/user");
+    res.redirect('/hello');
   });
 
 app.listen(3000);
-console.log("Starting the server");
+console.log('Starting the server');
