@@ -16,17 +16,17 @@ describe('Scarecrow strategy', function () {
 
   it('authorizationURL should have the host', function () {
     this.strategy.options
-      .authorizationURL.should.eql('http://scarecrow.org/auth/realms/goose-realm/tokens/login');
+      .authorizationURL.should.eql('https://scarecrow.org/auth/realms/goose-realm/tokens/login');
   });
 
   it('tokenURL should have the host', function () {
     this.strategy.options
-      .tokenURL.should.eql('http://scarecrow.org/auth/realms/goose-realm/tokens/access/codes');
+      .tokenURL.should.eql('https://scarecrow.org/auth/realms/goose-realm/tokens/access/codes');
   });
 
   it('userInfoURL should have the host', function () {
     this.strategy.options
-      .userInfoURL.should.eql('http://scarecrow.org/auth/userinfo');
+      .userInfoURL.should.eql('https://scarecrow.org/auth/userinfo');
   });
 
   describe('authorizationParams', function () {
