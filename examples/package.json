@@ -1,9 +1,9 @@
 {
-  "name": "passport-keycloak-examples",
+  "name": "passport-scarecrow-examples",
   "version": "0.0.0",
   "dependencies": {
     "express": ">= 0.0.0",
     "passport": ">= 0.0.0",
-    "passport-keycloak": ">= 0.0.0"
+    "passport-scarecrow": ">= 0.0.0"
   }
 }

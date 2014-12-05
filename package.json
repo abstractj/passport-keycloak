@@ -1,12 +1,12 @@
 {
-  "name": "passport-keycloak",
+  "name": "passport-scarecrow",
   "version": "0.0.1",
-  "description": "Keycloak authentication strategy for Passport.js",
+  "description": "Scarecrow authentication strategy for Passport.js",
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/jshint/bin/jshint ./lib/*.js && ./node_modules/mocha/bin/mocha"
   },
-  "repository": "https://github.com/abstractj/passport-keycloak.git",
+  "repository": "https://github.com/abstractj/passport-scarecrow.git",
   "author": "Bruno Oliveira<bruno@abstractj.org>",
   "license": "ASL2",
   "devDependencies": {

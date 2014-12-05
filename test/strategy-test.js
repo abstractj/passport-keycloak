@@ -1,11 +1,11 @@
-var KeycloakStrategy = require('../lib');
+var ScarecrowStrategy = require('../lib');
 var assert = require('assert');
 
-describe('Keycloak strategy', function () {
+describe('Scarecrow strategy', function () {
   before(function () {
-    this.strategy = new KeycloakStrategy({
+    this.strategy = new ScarecrowStrategy({
        realm: 'goose-realm',
-       host:       'keycloak.org',
+       host:       'scarecrow.org',
        clientID:     'testid',
        clientSecret: 'testsecret',
        callbackURL:  '/callback'
@@ -16,17 +16,17 @@ describe('Keycloak strategy', function () {
 
   it('authorizationURL should have the host', function () {
     this.strategy.options
-      .authorizationURL.should.eql('http://keycloak.org/auth/realms/goose-realm/tokens/login');
+      .authorizationURL.should.eql('http://scarecrow.org/auth/realms/goose-realm/tokens/login');
   });
 
   it('tokenURL should have the host', function () {
     this.strategy.options
-      .tokenURL.should.eql('http://keycloak.org/auth/realms/goose-realm/tokens/access/codes');
+      .tokenURL.should.eql('http://scarecrow.org/auth/realms/goose-realm/tokens/access/codes');
   });
 
   it('userInfoURL should have the host', function () {
     this.strategy.options
-      .userInfoURL.should.eql('http://keycloak.org/auth/userinfo');
+      .userInfoURL.should.eql('http://scarecrow.org/auth/userinfo');
   });
 
   describe('authorizationParams', function () {

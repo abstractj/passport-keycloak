@@ -1,9 +1,9 @@
 var express = require('express'),
   passport = require('passport'),
   util = require('util'),
-  KeycloakStrategy = require('../lib');
+  ScarecrowStrategy = require('../lib');
 
-passport.use(new KeycloakStrategy({
+passport.use(new ScarecrowStrategy({
     realm: 'goose-realm',
     host:       '<insert your host here>',
     clientID:     'goose-passport-js',
@@ -11,7 +11,7 @@ passport.use(new KeycloakStrategy({
     callbackURL:  'http://localhost:3000/hello/'
   },
   function(accessToken, idToken, profile, done) {
-    console.log('Keycloak strategy');
+    console.log('Scarecrow strategy');
   })
 );
 
@@ -37,7 +37,7 @@ app.get('/error', function (req, res) {
 });
 
 app.get('/callback',
-  passport.authenticate('Keycloak', { failureRedirect: '/error' }),
+  passport.authenticate('Scarecrow', { failureRedirect: '/error' }),
   function(req, res) {
     if (!req.user) {
       throw new Error('user null');
