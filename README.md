@@ -1,3 +1,7 @@
+# Notice
+
+This module was deprecated in favor of the work in progress here [https://github.com/keycloak/passport-keycloak](https://github.com/keycloak/passport-keycloak).
+
 # Passport Keycloak adapter
 
 Note: Most of the work done here was forked/adapted from [passport-auth0](https://github.com/auth0/passport-auth0.git).
